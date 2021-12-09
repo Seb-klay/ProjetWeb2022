@@ -25,4 +25,33 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+body {
+  background: red;
+}
+
+#titreAppli {
+  background: springgreen;
+  height: 150px;
+}
+
+#main {
+  border: 2px solid royalblue;
+  height: 500px;
+}
+
+#search {
+  background: yellow;
+  height: 250px;
+}
+
+#news {
+  background: yellowgreen;
+  height: 250px;
+}
+
+#footer {
+  background: turquoise;
+  height: 50px;
+}
 </style>
