@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === "production" ? "/moncv-liviopavone/" : "/"
+  runtimeCompiler: true,
+  publicPath:
+    process.env.NODE_ENV === "production" ? "projet-laboweb-livio-seb" : "/",
 };
