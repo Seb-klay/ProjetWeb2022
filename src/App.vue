@@ -4,6 +4,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/recherche">Recherche</router-link>
+      <!-- <router-link to="/starOfTheDay">Etoile du jour</router-link> -->
     </div>
     <router-view />
   </div>
@@ -28,6 +29,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: rgb(0, 190, 253);
 }
 </style>
