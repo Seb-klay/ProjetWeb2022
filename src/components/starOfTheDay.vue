@@ -50,6 +50,7 @@ import axios from "axios";
 <style scoped>
 .staroftheday {
   color: white;
+  height: 100vh;
 }
 .img {
   height: 75vw;

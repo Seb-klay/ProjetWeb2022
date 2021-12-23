@@ -1,16 +1,8 @@
 <template>
   <div id="app">
-    <h2>App Title</h2>
+    <h1 class="h1"><router-link to="/">StarFindr</router-link></h1>
     <div class="row justify-content-around" id="nav">
-      <div class="col-4 col-md-4" id="home">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="col-4 col-md-4" id="search">
-        <router-link to="/recherche">Recherche</router-link>
-      </div>
-      <div class="col-4 col-md-4" id="staroftheday">
-        <router-link to="/starOfTheDay"> Photo du jour</router-link>
-      </div>
+      <div id="home"></div>
     </div>
     <router-view />
   </div>
@@ -22,33 +14,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
   margin-top: 60px;
-  background: darkgray;
-}
-
-#home {
-  background: darkorchid;
-  height: 100px;
-  vertical-align: middle;
-}
-
-#search {
-  background: darkturquoise;
-  height: 100px;
-  vertical-align: middle;
+  background: black;
 }
 
 #nav {
   padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: rgb(0, 190, 253);
 }
 </style>
