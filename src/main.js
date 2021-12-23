@@ -1,4 +1,5 @@
 import router from "./router";
+import axios from "axios";
 import App from "./App.vue";
 import Vue from "vue";
 import { BootstrapVue } from "bootstrap-vue";
@@ -18,6 +19,7 @@ new Vue({
 
   computed: {},
   router,
+  axios,
 
   render(h) {
     return h(App);
