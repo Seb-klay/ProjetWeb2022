@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <h2>App Title</h2>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/starOfTheDay"> Photo du jour</router-link> |
-      <router-link to="/recherche">Recherche</router-link>
+    <div class="row justify-content-around" id="nav">
+      <div class="col-4 col-md-4" id="home">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="col-4 col-md-4" id="search">
+        <router-link to="/recherche">Recherche</router-link>
+      </div>
+      <div class="col-4 col-md-4" id="staroftheday">
+        <router-link to="/starOfTheDay"> Photo du jour</router-link>
+      </div>
     </div>
     <router-view />
   </div>
@@ -17,6 +23,20 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
+  background: darkgray;
+}
+
+#home {
+  background: darkorchid;
+  height: 100px;
+  vertical-align: middle;
+}
+
+#search {
+  background: darkturquoise;
+  height: 100px;
+  vertical-align: middle;
 }
 
 #nav {
