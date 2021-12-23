@@ -3,8 +3,8 @@
     <h2>App Title</h2>
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/starOfTheDay"> Photo du jour</router-link> |
       <router-link to="/recherche">Recherche</router-link>
-      <!-- <router-link to="/starOfTheDay">Etoile du jour</router-link> -->
     </div>
     <router-view />
   </div>

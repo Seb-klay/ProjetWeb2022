@@ -18,11 +18,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../components/Recherche.vue"),
   },
-  /*{
+  {
     path: "/starOfTheDay",
     name: "StarOfTheDay",
-    component: () => import("../components/StarOfTheDay.vue"),
-  },*/
+    component: () => import("../components/starOfTheDay.vue"),
+  },
 ];
 
 const router = new VueRouter({

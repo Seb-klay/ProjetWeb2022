@@ -3,19 +3,14 @@
     <div>
       <ul class="nobullet">
         <li>
-          <strong>Copyright :</strong>
-          {{ info.copyright }}
-        </li>
-        <li>
-          <strong>Date :</strong>
-          {{ info.date }}
-        </li>
-        <li>
-          <h2>{{ info.title }}</h2>
-          {{ info.explanation }}
+          <input
+            type="text"
+            v-model="star"
+            @input="findStar($event.target.value)"
+          />
+          <strong>Star name : {{ star }}</strong>
         </li>
       </ul>
-      <div class="img" :style="`background-image: url(${info.url})`"></div>
     </div>
   </section>
 </template>
@@ -23,15 +18,14 @@
 <script lang="js">
 import axios from "axios";
 
-  let API_KEY = "fqvrUTrVu2n2BRZK7xckxiU3YR7QwnCMxbsfrIOP";
-  const fullURL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+  const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
 
   export default  {
     name: 'Recherche',
     data() {
       return {
-        info : {}
-        //image: '',
+        info : {},
+        star: ''
       }
     },
     async created() {
@@ -39,11 +33,10 @@ import axios from "axios";
       this.info = result.data;
     },
     methods: {
-      async findDay() {
-        const donnees = await axios.post(fullURL, {name: this.copyright});
+      async findStar() {
+        const donnees = await axios.post(fullURL, {name: this.star_name});
 
         this.info = [...this.info, donnees.data];
-        this.image = "";
       },
     },
 }
