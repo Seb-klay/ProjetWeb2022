@@ -2,10 +2,14 @@
   <div id="home">
     <div class="row justify-content-around">
       <div class="col-4 col-md-4" id="search">
-        <router-link to="/recherche">Recherche</router-link>
+        <b-button>
+          <router-link to="/recherche">Recherche</router-link>
+        </b-button>
       </div>
       <div class="col-4 col-md-4" id="staroftheday">
-        <router-link to="/starOfTheDay"> Photo du jour</router-link>
+        <b-button>
+          <router-link to="/starOfTheDay">Photo du jour</router-link>
+        </b-button>
       </div>
     </div>
   </div>
@@ -21,23 +25,7 @@ export default {
 
 <style>
 #home {
-  text-align: center;
-  margin-top: 60px;
   background: black;
-  height: 30vh;
-}
-
-#search {
-  background: rgb(36, 36, 36);
-  vertical-align: center;
-  /* height: 50vh;
-  width: 50vh; */
-}
-
-#staroftheday {
-  background: rgb(36, 36, 36);
-  vertical-align: middle;
-  /* height: 50vh;
-  width: 50vh; */
+  padding: 5%;
 }
 </style>

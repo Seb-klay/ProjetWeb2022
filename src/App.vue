@@ -1,25 +1,38 @@
 <template>
   <div id="app">
-    <h1 class="h1"><router-link to="/">StarFindr</router-link></h1>
-    <div class="row justify-content-around" id="nav">
-      <div id="home"></div>
-    </div>
+    <h1 class="h1">
+      <router-link to="/">StarFindr</router-link>
+    </h1>
     <router-view />
   </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif, Press Start 2p, cursive,
+    Nothing You Could Do, cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  margin-top: 60px;
   background: black;
 }
 
-#nav {
-  padding: 30px;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5em;
+  font-family: "Press Start 2P", cursive;
+}
+
+h1 {
+  margin: 5%;
+  padding: 7%;
+  font-size: 10em;
 }
 </style>
