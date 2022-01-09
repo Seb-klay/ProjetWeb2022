@@ -1,6 +1,17 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
+  <div id="home">
+    <div class="row justify-content-around">
+      <div class="col-4 col-md-4" id="search">
+        <b-button>
+          <router-link to="/recherche">Recherche</router-link>
+        </b-button>
+      </div>
+      <div class="col-4 col-md-4" id="staroftheday">
+        <b-button>
+          <router-link to="/starOfTheDay">Photo du jour</router-link>
+        </b-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,3 +22,10 @@ export default {
   name: "Home",
 };
 </script>
+
+<style>
+#home {
+  background: black;
+  padding: 5%;
+}
+</style>

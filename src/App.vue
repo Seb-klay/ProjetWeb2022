@@ -1,54 +1,38 @@
 <template>
   <div id="app">
-    <h2>App Title</h2>
-    <div class="row justify-content-around" id="nav">
-      <div class="col-4 col-md-4" id="home">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="col-4 col-md-4" id="search">
-        <router-link to="/recherche">Recherche</router-link>
-      </div>
-      <div class="col-4 col-md-4" id="staroftheday">
-        <router-link to="/starOfTheDay"> Photo du jour</router-link>
-      </div>
-    </div>
+    <h1 class="h1">
+      <router-link to="/">StarFindr</router-link>
+    </h1>
     <router-view />
   </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif, Press Start 2p, cursive,
+    Nothing You Could Do, cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  background: darkgray;
+  color: white;
+  background: black;
 }
 
-#home {
-  background: darkorchid;
-  height: 100px;
-  vertical-align: middle;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5em;
+  font-family: "Press Start 2P", cursive;
 }
 
-#search {
-  background: darkturquoise;
-  height: 100px;
-  vertical-align: middle;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: rgb(0, 190, 253);
+h1 {
+  margin: 5%;
+  padding: 7%;
+  font-size: 10em;
 }
 </style>

@@ -1,15 +1,41 @@
 <template lang="html">
-  <section class="recherche">
+  <section id="recherche">
     <div>
       <ul class="nobullet">
         <li>
           <input
             type="text"
-            v-model="star"
-            @input="findStar($event.target.value)"
+            v-model="searchValue"
+            placeholder="nom exact de l'étoile"
           />
-          <strong>Star name : {{ star }}</strong>
-          <img id="retourSearch" />
+          <b-button v-on:click="findStar(searchValue)">Trouver étoile</b-button>
+          <h2>Voisinage de l'étoile</h2>
+          <vue-iframe
+            :src="ciel"
+            @load="loaded"
+            frame-id="windowStar"
+            width="20%"
+            height="20%"
+          />
+          <div>
+            <!-- <p>étoile : {{ this.fields[3] }}</p> -->
+            <h2>Informations</h2>
+            <b-table
+              stacked
+              :items="star_info"
+              :fields="fields"
+              class="table"
+            ></b-table>
+          </div>
+          <div>
+            <h2>Position de l'étoile dans le ciel</h2>
+            <b-img
+              center
+              class="carteCiel"
+              src="https://in-the-sky.org/data/charts/constellations_map_equ110112.png"
+              alt="Carte du ciel"
+            ></b-img>
+          </div>
         </li>
       </ul>
     </div>
@@ -26,19 +52,25 @@ import axios from "axios";
     name: 'Recherche',
     data() {
       return {
-        info : {},
-        star: ''
+        star_info : [],
+        searchValue : '',
+        fields : [{key:'hip_name', label:'Nom du catalogue HIP'}, {key:'hd_name', label:'Nom du catalogue HD'}, {key: 'tm_name', label: 'Nom du catalogue 2MASS'}, {key: 'rastr', label: 'Ascension droite'}, {key: 'decstr', label: 'Déclinaison'}, {key: 'st_dist', label: 'Distance en parsec'}, {key: 'st_vmag', label: 'Magnitude'}],
+        ciel: '',
+        loaded: false
       }
     },
-    async created() {
-      const result = await axios.get(fullURL);
-      this.info = result.data;
-    },
     methods: {
-      async findStar() {
-        const donnees = await axios.post(fullURL, {name: this.star_name});
+      async findStar(star) {
+        let constraint = `&where=star_name like '${star}'`;
+        const donnees = await axios.get(fullURL + constraint);
 
-        this.info = [...this.info, donnees.data];
+        this.star_info = donnees.data;
+
+        let ra = '00h40m32.40s';
+        //let ra = this.$data.fields.rastr;
+        //console.log("test ra : " + ra);
+        let dec = '-23d48m14.4s';
+        this.findLocation(ra, dec);
       },
 
       async findImages(star) {
@@ -51,20 +83,18 @@ import axios from "axios";
           console.log(result)
         });
       },
+      findLocation(ra, dec) {
+        this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=7&show_grid=0`;
+        this.loaded = true;
+      }
     },
   }
 </script>
 
 <style scoped>
-.recherche {
-  color: white;
-}
-.img {
-  height: 75vw;
-  width: 75vw;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: auto;
+#recherche {
+  width: 100%;
+  background: black;
 }
 
 .nobullet {
@@ -74,7 +104,20 @@ import axios from "axios";
 }
 
 h2 {
-  letter-spacing: 4px;
-  text-decoration: underline;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 5%;
+}
+
+.carteCiel {
+  width: 100%;
+  height: auto;
+  margin: 10%;
+  background-color: lightgrey;
+}
+
+.table {
+  color: white;
+  margin: 5% 0 5% 0;
 }
 </style>
