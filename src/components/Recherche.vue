@@ -9,6 +9,7 @@
             @input="findStar($event.target.value)"
           />
           <strong>Star name : {{ star }}</strong>
+          <img id="retourSearch" />
         </li>
       </ul>
     </div>
@@ -19,6 +20,7 @@
 import axios from "axios";
 
   const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
+  const SerpApi = require('google-search-results-nodejs');
 
   export default  {
     name: 'Recherche',
@@ -38,8 +40,19 @@ import axios from "axios";
 
         this.info = [...this.info, donnees.data];
       },
+
+      async findImages(star) {
+        let search = new SerpApi.GoogleSearch()
+        let result = search.json({
+          api_key: `d215573be5b8d841640123c2291c5ec2065d80ac06dc9a90b38e10137c6864c5`,
+          q: star,            // search query
+          }, (data) => {
+          console.log(data),
+          console.log(result)
+        });
+      },
     },
-}
+  }
 </script>
 
 <style scoped>
