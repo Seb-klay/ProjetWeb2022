@@ -40,87 +40,87 @@
 </template>
 
 <script lang="js">
-  import axios from "axios";
-  import ScatterChart from '@/components/scatterChart'
+import axios from "axios";
+import ScatterChart from '@/components/scatterChart'
 
-  const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
-  const SerpApi = require('google-search-results-nodejs');
+const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
+const SerpApi = require('google-search-results-nodejs');
 
-  export default  {
-    name: 'Recherche',
-    components: {
-      ScatterChart
+export default  {
+  name: 'Recherche',
+  components: {
+    ScatterChart
+  },
+  data() {
+    return {
+      star_info : [],
+      searchValue : '',
+      fields : [{key:'hip_name', label:'Nom du catalogue HIP'}, {key:'hd_name', label:'Nom du catalogue HD'}, {key: 'tm_name', label: 'Nom du catalogue 2MASS'}, {key: 'rastr', label: 'Ascension droite'}, {key: 'decstr', label: 'Déclinaison'}, {key: 'st_dist', label: 'Distance en parsec'}, {key: 'st_vmag', label: 'Magnitude'}],
+      ciel: ''
+    }
+  },
+  methods: {
+    async findStar(star) {
+      let constraint = `&where=star_name like '${star}'`;
+      const donnees = await axios.get(fullURL + constraint);
+
+      this.star_info = donnees.data;
+      let ra = this.star_info[0].rastr;
+      let dec = this.star_info[0].decstr;
+      this.findLocation(ra, dec);
+      this.starMap(ra, dec);
     },
-    data() {
-      return {
-        star_info : [],
-        searchValue : '',
-        fields : [{key:'hip_name', label:'Nom du catalogue HIP'}, {key:'hd_name', label:'Nom du catalogue HD'}, {key: 'tm_name', label: 'Nom du catalogue 2MASS'}, {key: 'rastr', label: 'Ascension droite'}, {key: 'decstr', label: 'Déclinaison'}, {key: 'st_dist', label: 'Distance en parsec'}, {key: 'st_vmag', label: 'Magnitude'}],
-        ciel: ''
+
+    async findImages(star) {
+      let search = new SerpApi.GoogleSearch()
+      let result = search.json({
+        api_key: `d215573be5b8d841640123c2291c5ec2065d80ac06dc9a90b38e10137c6864c5`,
+        q: star,            // search query
+        }, (data) => {
+        console.log(data),
+        console.log(result)
+      });
+    },
+    findLocation(ra, dec) {
+      this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=7&show_grid=0`;
+      this.loaded = true;
+    },
+    starMap(ra, dec) {
+      let degres = 0;
+      let heure = 0;
+      if (ra.substring(0,1) == 0) {
+        heure = ra.substring(1,2);
+      } else {
+        heure = ra.substring(0,2);
+      }
+        let minute = ra.substring(5, 3) ;
+        let seconde = ra.substring(8, 6) ;
+        let x = heure + "." + minute + seconde;
+        this.x = x;
+      if (dec.substring(0,1) == "-") {
+        if (dec.substring(1,2) == 0) {
+          degres = dec.substring(2, 3);
+        } else {
+          degres = dec.substring(1, 3);
+        }
+          let mindec = dec.substring(4, 6);
+          let secdec = dec.substring(7, 9);
+          let y = "-" + degres + "." + mindec + secdec;
+          this.y = y;
+      } else {
+        if (dec.substring(1,2) == 0) {
+          degres = dec.substring(2, 3);
+        } else {
+          degres = dec.substring(1, 3);
+        }
+          let mindec = dec.substring(4, 6);
+          let secdec = dec.substring(7, 9);
+          let y = degres + "." + mindec + secdec;
+          this.y = y;
       }
     },
-    methods: {
-      async findStar(star) {
-        let constraint = `&where=star_name like '${star}'`;
-        const donnees = await axios.get(fullURL + constraint);
-
-        this.star_info = donnees.data;
-        let ra = this.star_info[0].rastr;
-        let dec = this.star_info[0].decstr;
-        this.findLocation(ra, dec);
-        this.starMap(ra, dec);
-      },
-
-      async findImages(star) {
-        let search = new SerpApi.GoogleSearch()
-        let result = search.json({
-          api_key: `d215573be5b8d841640123c2291c5ec2065d80ac06dc9a90b38e10137c6864c5`,
-          q: star,            // search query
-          }, (data) => {
-          console.log(data),
-          console.log(result)
-        });
-      },
-      findLocation(ra, dec) {
-        this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=7&show_grid=0`;
-        this.loaded = true;
-      },
-      starMap(ra, dec) {
-        let degres = 0;
-        let heure = 0;
-        if (ra.substring(0,1) == 0) {
-          heure = ra.substring(1,2);
-        } else {
-          heure = ra.substring(0,2);
-        }
-          let minute = ra.substring(5, 3) ;
-          let seconde = ra.substring(8, 6) ;
-          let x = heure + "." + minute + seconde;
-          this.x = x;
-        if (dec.substring(0,1) == "-") {
-          if (dec.substring(1,2) == 0) {
-            degres = dec.substring(2, 3);
-          } else {
-            degres = dec.substring(1, 3);
-          }
-            let mindec = dec.substring(4, 6);
-            let secdec = dec.substring(7, 9);
-            let y = "-" + degres + "." + mindec + secdec;
-            this.y = y;
-        } else {
-          if (dec.substring(1,2) == 0) {
-            degres = dec.substring(2, 3);
-          } else {
-            degres = dec.substring(1, 3);
-          }
-            let mindec = dec.substring(4, 6);
-            let secdec = dec.substring(7, 9);
-            let y = degres + "." + mindec + secdec;
-            this.y = y;
-        }
-      },
-    },
-  }
+  },
+}
 </script>
 
 <style scoped>
