@@ -44,6 +44,7 @@
   import ScatterChart from '@/components/scatterChart'
 
   const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
+  const SerpApi = require('google-search-results-nodejs');
 
   export default  {
     name: 'Recherche',
@@ -68,6 +69,17 @@
         let dec = this.star_info[0].decstr;
         this.findLocation(ra, dec);
         this.starMap(ra, dec);
+      },
+
+      async findImages(star) {
+        let search = new SerpApi.GoogleSearch()
+        let result = search.json({
+          api_key: `d215573be5b8d841640123c2291c5ec2065d80ac06dc9a90b38e10137c6864c5`,
+          q: star,            // search query
+          }, (data) => {
+          console.log(data),
+          console.log(result)
+        });
       },
       findLocation(ra, dec) {
         this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=7&show_grid=0`;
@@ -108,7 +120,7 @@
         }
       },
     },
-}
+  }
 </script>
 
 <style scoped>
