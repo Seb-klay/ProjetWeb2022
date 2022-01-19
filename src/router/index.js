@@ -1,10 +1,8 @@
 import Vue from "vue";
-import VueIframe from "vue-iframes";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
-Vue.use(VueIframe);
 
 const routes = [
   {
