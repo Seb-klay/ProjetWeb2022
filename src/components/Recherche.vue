@@ -14,50 +14,25 @@
               >Trouver étoile</b-button
             >
           </form>
-          <h2>Voisinage de l'étoile</h2>
-          <vue-iframe
-            :src="ciel"
-            @load="loaded"
-            frame-id="windowStar"
-            width="20%"
-            height="20%"
-          />
-          <div>
-            <!-- <p>étoile : {{ this.fields[3] }}</p> -->
-            <h2>Informations</h2>
-            <b-table
-              stacked
-              :items="star_info"
-              :fields="fields"
-              class="table"
-            ></b-table>
-          </div>
-          <div>
-            <input
-              type="text"
-              v-model="searchValue"
-              placeholder="nom exact de l'étoile"
+          <div v-if="star_info[0] != null">
+            <h2>Voisinage de l'étoile</h2>
+            <vue-iframe
+              :src="ciel"
+              @load="loaded"
+              frame-id="windowStar"
+              width="20%"
+              height="20%"
             />
-            <b-button v-on:click="findStar(searchValue)"
-              >Trouver étoile</b-button
-            >
-            <div v-if="star_info[0] != null">
-              <h2>Voisinage de l'étoile</h2>
-              <vue-iframe
-                :src="ciel"
-                frame-id="windowStar"
-                width="20%"
-                height="20%"
-              />
-              <div>
-                <h2>Informations</h2>
-                <b-table
-                  stacked
-                  :items="star_info"
-                  :fields="fields"
-                  class="table"
-                ></b-table>
-              </div>
+            <div>
+              <h2>Informations</h2>
+              <b-table
+                stacked
+                :items="star_info"
+                :fields="fields"
+                class="table"
+              ></b-table>
+            </div>
+            <div>
               <h2>Position de l'étoile dans le ciel</h2>
               <div id="carteCiel">
                 <div id="chart">
