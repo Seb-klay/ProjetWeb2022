@@ -3,12 +3,17 @@
     <div>
       <ul class="nobullet">
         <li>
-          <input
-            type="text"
-            v-model="searchValue"
-            placeholder="nom exact de l'étoile"
-          />
-          <b-button v-on:click="findStar(searchValue)">Trouver étoile</b-button>
+          <form onsubmit="event.preventDefault();">
+            <input
+              type="text"
+              name="etoilesS"
+              v-model="searchValue"
+              placeholder="nom exact de l'étoile"
+            />
+            <b-button type="submit" v-on:click="findStar(searchValue)"
+              >Trouver étoile</b-button
+            >
+          </form>
           <h2>Voisinage de l'étoile</h2>
           <vue-iframe
             :src="ciel"
@@ -47,6 +52,7 @@ import axios from "axios";
 
   const fullURL = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=mission_exocat&format=json`;
   const SerpApi = require('google-search-results-nodejs');
+  //const imageSearch = require('image-search-google');
 
   export default  {
     name: 'Recherche',
