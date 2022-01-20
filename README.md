@@ -36,6 +36,8 @@ Dans l'ensemble le produit finis respecte les quelques schémas qui ont été r�
 Utiliser l'API de Google Image qui nous aurait permis de récupérer la première image de la recherche 
 du nom d'étoiles. Cela n'a pas fonctionné, nous avons décidé de supprimer cette fonctionnalité.
 
+Le vue-iFrame fonctionne très bien mais, dans la console, il emet quelques erreur. Ces erreurs sont minimes mais elles sont là. Ils n'ont pas pu être réglé dans les délais impartis au vu des dernières fonctionnalités à faire fonctionner.
+
 L'utilisation de vue-Chartjs a été compliqué. Il a fallu télécharger une version antérieure à la dernière à jour. Le fonctionnement de celle-ci a ensuite été difficile à comprendre mais, grâce à la documentation, le problème a pu être réglé.
 Le problème principale pour cette partie a été de comprendre que la Chart doit se trouver sur un nouveau composant et d'envoyer les informations de la position depuis le parent à l'enfant, qui est la Chart.
 La commande d'installation de la version de la Chart utilisée est la suivante : 
