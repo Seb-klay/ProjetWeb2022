@@ -36,9 +36,30 @@ a:active {
   font-family: "Press Start 2P", cursive;
 }
 
+@media (max-width: 600px) {
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    font-size: 1.2em !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    font-size: 2em !important;
+  }
+}
+
 h1 {
   margin: 5%;
   padding: 7%;
-  font-size: 10em;
+}
+
+.h1 a {
+  font-size: 8vw !important;
 }
 </style>
