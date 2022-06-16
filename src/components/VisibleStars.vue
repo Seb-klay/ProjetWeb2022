@@ -1,55 +1,43 @@
 <template lang="html">
   <section id="visibleStars" class="row justify-content-around">
-    <div class="col-12 col-md-12">
-      <ul class="nobullet">
-        <li>
-          <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Magnitude</th>
-                <th scope="col">Détails</th>
-              </tr>
-            </thead>
-            <tbody v-for="(star, index) in stars" :key="index">
-              <tr>
-                <th scope="row">{{ index }}</th>
-                <td>{{ star.name }}</td>
-                <td>{{ star.MAG }}</td>
-                <td>
-                  <b-button
-                    v-on:click="findStar(searchValue)"
-                    variant="outline-danger"
-                    >Infos</b-button
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div v-if="infos">
-            <h2>Voisinage de l'étoile</h2>
-            <vue-iframe
-              :src="ciel"
-              frame-id="windowStar"
-              width="20%"
-              height="20%"
-            />
-            <div>
-              <h2>Informations</h2>
-              <b-table stacked :fields="fields" class="table"></b-table>
-            </div>
-            <div>
-              <h2>Position de l'étoile dans le ciel</h2>
-              <div id="carteCiel">
-                <div id="chart">
-                  <scatter-chart :x="this.x" :y="this.y"></scatter-chart>
-                </div>
-              </div>
+    <div class="col-12 col-md-10">
+      <div v-if="starChoosen.length === 0">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Magnitude</th>
+              <th scope="col">Détails</th>
+            </tr>
+          </thead>
+          <tbody v-for="(star, index) in stars" :key="index">
+            <tr>
+              <th scope="row">{{ index + 1 }}</th>
+              <td>{{ star.name }}</td>
+              <td>{{ star.MAG }}</td>
+              <td>
+                <b-button v-on:click="findStar(star)" variant="outline-danger"
+                  >Infos</b-button
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div v-else>
+        <div id="description">
+          <h2>{{ starChoosen.name }}</h2>
+          <h2>{{ starChoosen.MAG }}mg</h2>
+        </div>
+        <div>
+          <div id="carteCiel">
+            <div id="chart">
+              <scatter-chart :x="this.x" :y="this.y"></scatter-chart>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -68,25 +56,19 @@ export default {
       searchValue: "",
       ciel: "",
       stars: JsonStars,
-      ind: null,
-      infos: false,
+      starChoosen: [],
     };
   },
   methods: {
     findStar(star) {
-      console.warn("on test ici");
-      const donnees = JSON.parse(JsonStars);
+      this.infos == true;
 
-      while (donnees.name != star) {
-        if (donnees.name == star) {
-          this.stars = donnees.name == star;
-          this.ind = donnees.id;
-        }
-      }
-      //let ra = this.star_info[0].rastr;
-      //let dec = this.star_info[0].decstr;
-      //this.findLocation(ra, dec);
-      //this.starMap(ra, dec);
+      this.starChoosen = star;
+
+      let ra = star.RA;
+      let dec = star.DEC;
+      this.findLocation(ra, dec);
+      this.starMap(ra, dec);
     },
 
     findLocation(ra, dec) {
@@ -149,9 +131,14 @@ h2 {
   margin: 5%;
 }
 
+#description {
+  font-size: 2.5em;
+}
+
 #carteCiel {
   width: 100%;
   height: auto;
+  margin: 3%;
   background-color: lightgrey;
   background-image: url("../assets/carteDuCiel.png");
   background-size: 100% 100%;
