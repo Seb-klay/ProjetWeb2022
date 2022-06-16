@@ -23,6 +23,11 @@ const routes = [
     name: "StarOfTheDay",
     component: () => import("../components/starOfTheDay.vue"),
   },
+  {
+    path: "/visibleStars",
+    name: "VisibleStars",
+    component: () => import("../components/VisibleStars.vue"),
+  },
 ];
 
 const router = new VueRouter({
