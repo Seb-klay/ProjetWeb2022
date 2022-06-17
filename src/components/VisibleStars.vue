@@ -27,6 +27,7 @@
       </div>
       <div v-else>
         <div id="description">
+          <div id="aladin-lite-div" v:bind="aladin">{{ aladin }}</div>
           <h2>{{ starChoosen.name }}</h2>
           <h2>{{ starChoosen.MAG }}mg</h2>
         </div>
@@ -53,11 +54,15 @@ export default {
   },
   data() {
     return {
-      searchValue: "",
-      ciel: "",
       stars: JsonStars,
       starChoosen: [],
+      aladin: "",
     };
+  },
+  mounted() {
+    let aladin = document.createElement('script');
+    aladin.setAttribute('src', 'https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js');
+    document.head.appendChild(aladin);
   },
   methods: {
     findStar(star) {
@@ -67,15 +72,21 @@ export default {
 
       let ra = star.RA;
       let dec = star.DEC;
-      this.findLocation(ra, dec);
+      console.log(ra + dec);
+      this.aladinPosition(star.name);
+      //this.findLocation(ra, dec);
       this.starMap(ra, dec);
     },
-
-    findLocation(ra, dec) {
-      this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=7&show_grid=0`;
-      this.loaded = true;
+    aladinPosition(name) {
+      const A = `https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js`;
+      var aldn = A.aladin('#aladin-lite-div', {fov:0.1, target: name});
+      this.aladin = aldn;
     },
+    //findLocation(ra, dec) {
+
+    //},
     starMap(ra, dec) {
+      console.log(ra + dec);
       let degres = 0;
       let heure = 0;
       if (ra.substring(0, 1) == 0) {
@@ -108,6 +119,7 @@ export default {
         let y = degres + "." + mindec + secdec;
         this.y = y;
       }
+      console.log(this.x + this.y);
     },
   },
 };
@@ -133,6 +145,11 @@ h2 {
 
 #description {
   font-size: 2.5em;
+}
+
+#aladin-lite-div {
+  width: 100%;
+  height: 98%;
 }
 
 #carteCiel {
