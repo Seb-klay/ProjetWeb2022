@@ -1,0 +1,802 @@
+[
+ {
+  "Id": 1,
+  "Name": "Sirius",
+  "Astronomical_name": "Alpha Canis Majoris",
+  "Meaning": "Greek: \"scorching\"",
+  "Magnitude": "-1.44",
+  "Distance": 9
+ },
+ {
+  "Id": 2,
+  "Name": "Canopus",
+  "Astronomical_name": "Alpha Carinae",
+  "Meaning": "Greek: pilot of the ship Argo",
+  "Magnitude": "-0.62",
+  "Distance": 313
+ },
+ {
+  "Id": 3,
+  "Name": "Arcturus",
+  "Astronomical_name": "Alpha Bootis",
+  "Meaning": "Greek: \"guardian of the bear\"",
+  "Magnitude": "-0.05",
+  "Distance": 37
+ },
+ {
+  "Id": 4,
+  "Name": "Rigel Kentaurus",
+  "Astronomical_name": "Alpha Centauri",
+  "Meaning": "Arabic: \"foot of the centaur\"",
+  "Magnitude": "-0.01",
+  "Distance": 4
+ },
+ {
+  "Id": 5,
+  "Name": "Vega",
+  "Astronomical_name": "Alpha Lyrae",
+  "Meaning": "Arabic: eagle or vulture",
+  "Magnitude": "0.03",
+  "Distance": 25
+ },
+ {
+  "Id": 6,
+  "Name": "Capella",
+  "Astronomical_name": "Alpha Aurigae",
+  "Meaning": "Latin: \"little she-goat\"",
+  "Magnitude": "0.08",
+  "Distance": 42
+ },
+ {
+  "Id": 7,
+  "Name": "Rigel",
+  "Astronomical_name": "Beta Orionis",
+  "Meaning": "Arabic: \"foot\"",
+  "Magnitude": "0.18",
+  "Distance": 773
+ },
+ {
+  "Id": 8,
+  "Name": "Procyon",
+  "Astronomical_name": "Alpha Canis Minoris",
+  "Meaning": "Greek: \"before the dog\"",
+  "Magnitude": "0.40",
+  "Distance": 11
+ },
+ {
+  "Id": 9,
+  "Name": "Betelgeuse",
+  "Astronomical_name": "Alpha Orionis",
+  "Meaning": "Arabic: \"armpit of the great one\"",
+  "Magnitude": "0.45",
+  "Distance": 522
+ },
+ {
+  "Id": 10,
+  "Name": "Achernar",
+  "Astronomical_name": "Alpha Eridani",
+  "Meaning": "Arabic: \"river's end\"",
+  "Magnitude": "0.45",
+  "Distance": 144
+ },
+ {
+  "Id": 11,
+  "Name": "Hadar (Agena)",
+  "Astronomical_name": "Beta Centauri",
+  "Meaning": "Arabic: \"ground\" (Latin: \"knee\")",
+  "Magnitude": "0.61",
+  "Distance": 526
+ },
+ {
+  "Id": 12,
+  "Name": "Altair",
+  "Astronomical_name": "Alpha Aquilae",
+  "Meaning": "Arabic: \"the eagle\"",
+  "Magnitude": "0.76",
+  "Distance": 17
+ },
+ {
+  "Id": 13,
+  "Name": "Acrux",
+  "Astronomical_name": "Alpha Crucis",
+  "Meaning": "Greek: comb. of alpha crux",
+  "Magnitude": "0.77",
+  "Distance": 321
+ },
+ {
+  "Id": 14,
+  "Name": "Aldebaran",
+  "Astronomical_name": "Alpha Tauri",
+  "Meaning": "Arabic: \"the follower\"",
+  "Magnitude": "0.87",
+  "Distance": 65
+ },
+ {
+  "Id": 15,
+  "Name": "Spica",
+  "Astronomical_name": "Alpha Virginis",
+  "Meaning": "Latin: ear of wheat",
+  "Magnitude": "0.98",
+  "Distance": 262
+ },
+ {
+  "Id": 16,
+  "Name": "Antares",
+  "Astronomical_name": "Alpha Scorpii",
+  "Meaning": "Greek: rival of Mars",
+  "Magnitude": " 1.06",
+  "Distance": 604
+ },
+ {
+  "Id": 17,
+  "Name": "Pollux",
+  "Astronomical_name": "Beta Geminorum",
+  "Meaning": "Greek: immortal Gemini twin brother",
+  "Magnitude": " 1.16",
+  "Distance": 34
+ },
+ {
+  "Id": 18,
+  "Name": "Formalhaut",
+  "Astronomical_name": "Alpha Piscis Austrini",
+  "Meaning": "Arabic: \"the mouth of the fish\"",
+  "Magnitude": " 1.17",
+  "Distance": 25
+ },
+ {
+  "Id": 19,
+  "Name": "Deneb",
+  "Astronomical_name": "Alpha Cygni",
+  "Meaning": "Arabic: \"tail\"",
+  "Magnitude": " 1.25",
+  "Distance": 1467
+ },
+ {
+  "Id": 20,
+  "Name": "Mimosa",
+  "Astronomical_name": "Beta Crucis",
+  "Meaning": "Latin: \"actor\"",
+  "Magnitude": " 1.25",
+  "Distance": 352
+ },
+ {
+  "Id": 21,
+  "Name": "Regulus",
+  "Astronomical_name": "Alpha Leonis",
+  "Meaning": "Greek: \"little king\"",
+  "Magnitude": " 1.36",
+  "Distance": 77
+ },
+ {
+  "Id": 22,
+  "Name": "Adhara",
+  "Astronomical_name": "Epsilon Canis Majoris",
+  "Meaning": "Arabic: \"the virgins\"",
+  "Magnitude": " 1.50",
+  "Distance": 431
+ },
+ {
+  "Id": 23,
+  "Name": "Castor",
+  "Astronomical_name": "Alpha Geminorum",
+  "Meaning": "Greek: mortal Gemini twin brother",
+  "Magnitude": " 1.58",
+  "Distance": 52
+ },
+ {
+  "Id": 24,
+  "Name": "Gacrux",
+  "Astronomical_name": "Gamma Crucis",
+  "Meaning": "Greek: comb. of gamma and crux",
+  "Magnitude": " 1.59",
+  "Distance": 88
+ },
+ {
+  "Id": 25,
+  "Name": "Shaula",
+  "Astronomical_name": "Lambda Scorpii",
+  "Meaning": "Arabic: \"stinger\"",
+  "Magnitude": " 1.62",
+  "Distance": 359
+ },
+ {
+  "Id": 26,
+  "Name": "Bellatrix",
+  "Astronomical_name": "Gamma Orionis",
+  "Meaning": "Greek: an Amazon warrior",
+  "Magnitude": " 1.64",
+  "Distance": 243
+ },
+ {
+  "Id": 27,
+  "Name": "Alnath",
+  "Astronomical_name": "Beta Tauri",
+  "Meaning": "Arabic: \"the butting one\"",
+  "Magnitude": " 1.65",
+  "Distance": 131
+ },
+ {
+  "Id": 28,
+  "Name": "Miaplacidus",
+  "Astronomical_name": "Beta Carinae",
+  "Meaning": "Arabic\/Latin: \"peaceful waters\"",
+  "Magnitude": " 1.67",
+  "Distance": 111
+ },
+ {
+  "Id": 29,
+  "Name": "Alnilam",
+  "Astronomical_name": "Epsilon Orionis",
+  "Meaning": "Arabic: \"string of pearls\"",
+  "Magnitude": " 1.69",
+  "Distance": 1342
+ },
+ {
+  "Id": 30,
+  "Name": "Alnair",
+  "Astronomical_name": "Alpha Gruis",
+  "Meaning": "Arabic: \"the bright one\"",
+  "Magnitude": " 1.73",
+  "Distance": 101
+ },
+ {
+  "Id": 31,
+  "Name": "Alnitak",
+  "Astronomical_name": "Zeta Orionis",
+  "Meaning": "Arabic: \"the girdle\"",
+  "Magnitude": " 1.74",
+  "Distance": 817
+ },
+ {
+  "Id": 32,
+  "Name": "Regor",
+  "Astronomical_name": "Gamma Velorum",
+  "Meaning": "unknown",
+  "Magnitude": " 1.75",
+  "Distance": 840
+ },
+ {
+  "Id": 33,
+  "Name": "Alioth",
+  "Astronomical_name": "Epsilon Ursae Majoris",
+  "Meaning": "Arabic: \"the bull\"",
+  "Magnitude": " 1.76",
+  "Distance": 81
+ },
+ {
+  "Id": 34,
+  "Name": "Kaus Australis",
+  "Astronomical_name": "Epsilon Sagittarii",
+  "Meaning": "Arabic\/Latin: \"southern part of the bow\"",
+  "Magnitude": " 1.79",
+  "Distance": 145
+ },
+ {
+  "Id": 35,
+  "Name": "Mirphak",
+  "Astronomical_name": "Alpha Persei",
+  "Meaning": "Arabic: \"elbow\"",
+  "Magnitude": " 1.79",
+  "Distance": 592
+ },
+ {
+  "Id": 36,
+  "Name": "Dubhe",
+  "Astronomical_name": "Alpha Ursae Majoris",
+  "Meaning": "Arabic: \"bear\"",
+  "Magnitude": " 1.81",
+  "Distance": 124
+ },
+ {
+  "Id": 37,
+  "Name": "Wezen",
+  "Astronomical_name": "Delta Canis Majoris",
+  "Meaning": "Arabic: \"weight\"",
+  "Magnitude": " 1.83",
+  "Distance": 1791
+ },
+ {
+  "Id": 38,
+  "Name": "Alkaid",
+  "Astronomical_name": "Eta Ursae Majoris",
+  "Meaning": "Arabic: chief of the mourners",
+  "Magnitude": " 1.85",
+  "Distance": 101
+ },
+ {
+  "Id": 39,
+  "Name": "Sargas",
+  "Astronomical_name": "Theta Scorpii",
+  "Meaning": "Sumerian: \"scorpion\"",
+  "Magnitude": " 1.86",
+  "Distance": 272
+ },
+ {
+  "Id": 40,
+  "Name": "Avior",
+  "Astronomical_name": "Epsilon Carinae",
+  "Meaning": "unknown",
+  "Magnitude": " 1.86",
+  "Distance": 632
+ },
+ {
+  "Id": 41,
+  "Name": "Menkalinan",
+  "Astronomical_name": "Beta Aurigae",
+  "Meaning": "Arabic: \"shoulder of the rein-holder\"",
+  "Magnitude": " 1.90",
+  "Distance": 82
+ },
+ {
+  "Id": 42,
+  "Name": "Atria",
+  "Astronomical_name": "Alpha Trianguli Australis",
+  "Meaning": "Greek\/English: combination of alpha and triangle",
+  "Magnitude": " 1.91",
+  "Distance": 415
+ },
+ {
+  "Id": 43,
+  "Name": "Delta Velorum",
+  "Astronomical_name": "Delta Velorum",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 1.93",
+  "Distance": 80
+ },
+ {
+  "Id": 44,
+  "Name": "Alhena",
+  "Astronomical_name": "Gamma Geminorum",
+  "Meaning": "Arabic: \"the mark\" on the right side of a camel's neck",
+  "Magnitude": " 1.93",
+  "Distance": 105
+ },
+ {
+  "Id": 45,
+  "Name": "Peacock",
+  "Astronomical_name": "Alpha Pavonis",
+  "Meaning": "English: Peacock",
+  "Magnitude": " 1.94",
+  "Distance": 183
+ },
+ {
+  "Id": 46,
+  "Name": "Polaris",
+  "Astronomical_name": "Alpha Ursae Minoris",
+  "Meaning": "Latin: pole star",
+  "Magnitude": " 1.97",
+  "Distance": 431
+ },
+ {
+  "Id": 47,
+  "Name": "Mirzam",
+  "Astronomical_name": "Beta Canis Majoris",
+  "Meaning": "Arabic: \"herald\"",
+  "Magnitude": " 1.98",
+  "Distance": 499
+ },
+ {
+  "Id": 48,
+  "Name": "Alphard",
+  "Astronomical_name": "Alpha Hydrae",
+  "Meaning": "Arabic: \"the solitary one\"",
+  "Magnitude": " 1.99",
+  "Distance": 177
+ },
+ {
+  "Id": 49,
+  "Name": "Algieba",
+  "Astronomical_name": "Gamma Leonis",
+  "Meaning": "Arabic: \"the forehead\"",
+  "Magnitude": " 2.01",
+  "Distance": 126
+ },
+ {
+  "Id": 50,
+  "Name": "Hamal",
+  "Astronomical_name": "Alpha Arietis",
+  "Meaning": "Arabic: \"lamb\"",
+  "Magnitude": " 2.01",
+  "Distance": 66
+ },
+ {
+  "Id": 51,
+  "Name": "Deneb Kaitos",
+  "Astronomical_name": "Beta Ceti",
+  "Meaning": "Arabic\/Greek: \"tail of the sea monster\"",
+  "Magnitude": " 2.04",
+  "Distance": 96
+ },
+ {
+  "Id": 52,
+  "Name": "Nunki",
+  "Astronomical_name": "Sigma Sagittarii",
+  "Meaning": "ancient Babylonian name",
+  "Magnitude": " 2.05",
+  "Distance": 224
+ },
+ {
+  "Id": 53,
+  "Name": "Merkent",
+  "Astronomical_name": "Theta Centauri",
+  "Meaning": "Arabic: \"in the shoulder of the centaur\"",
+  "Magnitude": " 2.06",
+  "Distance": 61
+ },
+ {
+  "Id": 54,
+  "Name": "Saiph",
+  "Astronomical_name": "Kappa Orionis",
+  "Meaning": "Arabic: \"sword\"",
+  "Magnitude": " 2.07",
+  "Distance": 815
+ },
+ {
+  "Id": 55,
+  "Name": "Alpheratz",
+  "Astronomical_name": "Alpha Andromedae",
+  "Meaning": "Arabic: \"horse's shoulder\"",
+  "Magnitude": " 2.07",
+  "Distance": 97
+ },
+ {
+  "Id": 56,
+  "Name": "Beta Gruis",
+  "Astronomical_name": "Beta Gruis",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.07",
+  "Distance": 170
+ },
+ {
+  "Id": 57,
+  "Name": "Mirach",
+  "Astronomical_name": "Beta Andromedae",
+  "Meaning": "Arabic: \"girdle\"",
+  "Magnitude": " 2.07",
+  "Distance": 199
+ },
+ {
+  "Id": 58,
+  "Name": "Kochab",
+  "Astronomical_name": "Beta Ursae Minoris",
+  "Meaning": "Arabic: unknown meaning",
+  "Magnitude": " 2.07",
+  "Distance": 126
+ },
+ {
+  "Id": 59,
+  "Name": "Rasalhague",
+  "Astronomical_name": "Alpha Ophiuchi",
+  "Meaning": "Arabic: \"head of the serpent-charmer\"",
+  "Magnitude": " 2.08",
+  "Distance": 47
+ },
+ {
+  "Id": 60,
+  "Name": "Algol",
+  "Astronomical_name": "Beta Persei",
+  "Meaning": "Arabic: \"the demon's head\"",
+  "Magnitude": " 2.09",
+  "Distance": 93
+ },
+ {
+  "Id": 61,
+  "Name": "Almaak",
+  "Astronomical_name": "Gamma Andromedae",
+  "Meaning": "Arabic: type of small, predatory animal in Arabia",
+  "Magnitude": " 2.10",
+  "Distance": 355
+ },
+ {
+  "Id": 62,
+  "Name": "Denebola",
+  "Astronomical_name": "Beta Leonis",
+  "Meaning": "Arabic: \"lion's tail\"",
+  "Magnitude": " 2.14",
+  "Distance": 36
+ },
+ {
+  "Id": 63,
+  "Name": "Cih",
+  "Astronomical_name": "Gamma Cassiopeiae",
+  "Meaning": "Chinese: \"whip\"",
+  "Magnitude": " 2.15",
+  "Distance": 613
+ },
+ {
+  "Id": 64,
+  "Name": "Muliphain",
+  "Astronomical_name": "Gamma Centauri",
+  "Meaning": "Arabic: \"oath\"",
+  "Magnitude": " 2.20",
+  "Distance": 130
+ },
+ {
+  "Id": 65,
+  "Name": "Naos",
+  "Astronomical_name": "Zeta Puppis",
+  "Meaning": "Greek: \"ship\"",
+  "Magnitude": " 2.21",
+  "Distance": 1399
+ },
+ {
+  "Id": 66,
+  "Name": "Tureis",
+  "Astronomical_name": "Iota Carinae",
+  "Meaning": "Arabic: an ornament on a ship's stern",
+  "Magnitude": " 2.21",
+  "Distance": 694
+ },
+ {
+  "Id": 67,
+  "Name": "Alphecca (Gemma)",
+  "Astronomical_name": "Alpha Coronae Borealis",
+  "Meaning": "Arabic: \"bright one of the dish\" (Latin: gem)",
+  "Magnitude": " 2.22",
+  "Distance": 75
+ },
+ {
+  "Id": 68,
+  "Name": "Suhail",
+  "Astronomical_name": "Lambda Velorum",
+  "Meaning": "Arabic: an honorific title of respect",
+  "Magnitude": " 2.23",
+  "Distance": 573
+ },
+ {
+  "Id": 69,
+  "Name": "Sadir",
+  "Astronomical_name": "Gamma Cygni",
+  "Meaning": "Arabic: a birds breast",
+  "Magnitude": " 2.23",
+  "Distance": 522
+ },
+ {
+  "Id": 70,
+  "Name": "Mizar",
+  "Astronomical_name": "Zeta Ursae Majoris",
+  "Meaning": "Arabic: \"groin\"",
+  "Magnitude": " 2.23",
+  "Distance": 78
+ },
+ {
+  "Id": 71,
+  "Name": "Schedar",
+  "Astronomical_name": "Alpha Cassiopeiae",
+  "Meaning": "Arabic: \"beast\"",
+  "Magnitude": " 2.24",
+  "Distance": 228
+ },
+ {
+  "Id": 72,
+  "Name": "Eltanin",
+  "Astronomical_name": "Gamma Draconis",
+  "Meaning": "Arabic: \"the dragon's head\"",
+  "Magnitude": " 2.24",
+  "Distance": 148
+ },
+ {
+  "Id": 73,
+  "Name": "Mintaka",
+  "Astronomical_name": "Delta Orionis",
+  "Meaning": "Arabic: \"belt\"",
+  "Magnitude": " 2.25",
+  "Distance": 916
+ },
+ {
+  "Id": 74,
+  "Name": "Caph",
+  "Astronomical_name": "Beta Cassiopeiae",
+  "Meaning": "Arabic: \"hand\"",
+  "Magnitude": " 2.28",
+  "Distance": 54
+ },
+ {
+  "Id": 75,
+  "Name": "Dschubba",
+  "Astronomical_name": "Delta Scorpii",
+  "Meaning": "Arabic: \"forehead\"",
+  "Magnitude": " 2.29",
+  "Distance": 522
+ },
+ {
+  "Id": 76,
+  "Name": "Hao",
+  "Astronomical_name": "Epsilon Scorpii",
+  "Meaning": "Chinese: \"queen\"",
+  "Magnitude": " 2.29",
+  "Distance": 65
+ },
+ {
+  "Id": 77,
+  "Name": "Epsilon Centauri",
+  "Astronomical_name": "Epsilon Centauri",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.29",
+  "Distance": 376
+ },
+ {
+  "Id": 78,
+  "Name": "Alpha Lupi",
+  "Astronomical_name": "Alpha Lupi",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.30",
+  "Distance": 548
+ },
+ {
+  "Id": 79,
+  "Name": "Eta Centauri",
+  "Astronomical_name": "Eta Centauri",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.33",
+  "Distance": 308
+ },
+ {
+  "Id": 80,
+  "Name": "Merak",
+  "Astronomical_name": "Beta Ursae Majoris",
+  "Meaning": "Arabic: \"flank\"",
+  "Magnitude": " 2.34",
+  "Distance": 79
+ },
+ {
+  "Id": 81,
+  "Name": "Izar",
+  "Astronomical_name": "Epsilon Bootis",
+  "Meaning": "Arabic: \"girdle\"",
+  "Magnitude": " 2.35",
+  "Distance": 210
+ },
+ {
+  "Id": 82,
+  "Name": "Enif",
+  "Astronomical_name": "Epsilon Pegasi",
+  "Meaning": "Arabic: \"nose\"",
+  "Magnitude": " 2.38",
+  "Distance": 672
+ },
+ {
+  "Id": 83,
+  "Name": "Kappa Scorpii",
+  "Astronomical_name": "Kappa Scorpii",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.39",
+  "Distance": 464
+ },
+ {
+  "Id": 84,
+  "Name": "Ankaa",
+  "Astronomical_name": "Alpha Phoenicis",
+  "Meaning": "Arabic: name of a legendary bird",
+  "Magnitude": " 2.40",
+  "Distance": 77
+ },
+ {
+  "Id": 85,
+  "Name": "Phecda",
+  "Astronomical_name": "Gamma Ursae Majoris",
+  "Meaning": "Arabic: \"thigh\"",
+  "Magnitude": " 2.41",
+  "Distance": 84
+ },
+ {
+  "Id": 86,
+  "Name": "Sabik",
+  "Astronomical_name": "Eta Ophiuchi",
+  "Meaning": "Arabic: unknown meaning",
+  "Magnitude": " 2.43",
+  "Distance": 84
+ },
+ {
+  "Id": 87,
+  "Name": "Scheat",
+  "Astronomical_name": "Beta Pegasi",
+  "Meaning": "Arabic: \"shin\"",
+  "Magnitude": " 2.44",
+  "Distance": 199
+ },
+ {
+  "Id": 88,
+  "Name": "Alderamin",
+  "Astronomical_name": "Alpha Cephei",
+  "Meaning": "Arabic: \"the right arm\"",
+  "Magnitude": " 2.45",
+  "Distance": 49
+ },
+ {
+  "Id": 89,
+  "Name": "Aludra",
+  "Astronomical_name": "Eta Canis Majoris",
+  "Meaning": "Arabic: \"virginity\"",
+  "Magnitude": " 2.45",
+  "Distance": 3196
+ },
+ {
+  "Id": 90,
+  "Name": "Kappa Velorum",
+  "Astronomical_name": "Kappa Velorum",
+  "Meaning": "Bayer designation*",
+  "Magnitude": " 2.47",
+  "Distance": 539
+ },
+ {
+  "Id": 91,
+  "Name": "Gienah",
+  "Astronomical_name": "Epsilon Cygni",
+  "Meaning": "Arabic: \"wing\"",
+  "Magnitude": " 2.48",
+  "Distance": 72
+ },
+ {
+  "Id": 92,
+  "Name": "Markab",
+  "Astronomical_name": "Alpha Pegasi",
+  "Meaning": "Arabic: saddle",
+  "Magnitude": " 2.49",
+  "Distance": 140
+ },
+ {
+  "Id": 93,
+  "Name": "Han",
+  "Astronomical_name": "Zeta Ophiuchi",
+  "Meaning": "Chinese: an ancient feudal state in China",
+  "Magnitude": " 2.54",
+  "Distance": 458
+ },
+ {
+  "Id": 94,
+  "Name": "Menkar",
+  "Astronomical_name": "Alpha Ceti",
+  "Meaning": "Arabic: \"nose\"",
+  "Magnitude": " 2.54",
+  "Distance": 220
+ },
+ {
+  "Id": 95,
+  "Name": "Alnair",
+  "Astronomical_name": "Zeta Centauri",
+  "Meaning": "Arabic: \"the bright one\"",
+  "Magnitude": " 2.55",
+  "Distance": 384
+ },
+ {
+  "Id": 96,
+  "Name": "Graffias",
+  "Astronomical_name": "Beta Scorpii",
+  "Meaning": "Arabic(?): claws",
+  "Magnitude": " 2.56",
+  "Distance": 530
+ },
+ {
+  "Id": 97,
+  "Name": "Zosma",
+  "Astronomical_name": "Delta Leonis",
+  "Meaning": "Greek: \"girdle\"",
+  "Magnitude": " 2.56",
+  "Distance": 58
+ },
+ {
+  "Id": 98,
+  "Name": "Ma Wei",
+  "Astronomical_name": "Delta Centauri",
+  "Meaning": "Chinese: \"the horse's tail\"",
+  "Magnitude": " 2.58",
+  "Distance": 395
+ },
+ {
+  "Id": 99,
+  "Name": "Arneb",
+  "Astronomical_name": "Alpha Leporis",
+  "Meaning": "Arabic: \"hare\"",
+  "Magnitude": " 2.58",
+  "Distance": 1283
+ },
+ {
+  "Id": 100,
+  "Name": "Gienah Ghurab",
+  "Astronomical_name": "Gamma Corvi",
+  "Meaning": "Arabic: \"right wing of the raven\"",
+  "Magnitude": " 2.58",
+  "Distance": 165
+ }
+]

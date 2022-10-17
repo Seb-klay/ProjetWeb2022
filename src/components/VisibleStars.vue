@@ -1,7 +1,8 @@
 <template lang="html">
   <section id="visibleStars" class="row justify-content-around">
     <div class="col-12 col-md-10">
-      <div v-if="starChoosen.length === 0">
+      <div id="aladin"></div>
+      <div v-if="starChoosen.length === 0 || starChoosen === null">
         <table class="table table-dark">
           <thead>
             <tr>
@@ -14,10 +15,10 @@
           <tbody v-for="(star, index) in stars" :key="index">
             <tr>
               <th scope="row">{{ index + 1 }}</th>
-              <td>{{ star.name }}</td>
-              <td>{{ star.MAG }}</td>
+              <td>{{ star.Name }}</td>
+              <td>{{ star.Magnitude }}</td>
               <td>
-                <b-button v-on:click="findStar(star)" variant="outline-danger"
+                <b-button v-on:click="findStar(star)" variant="outline-warning"
                   >Infos</b-button
                 >
               </td>
@@ -26,12 +27,36 @@
         </table>
       </div>
       <div v-else>
+        <b-button variant="outline-warning" @click="starChoosen = []"
+          >Retour</b-button
+        >
         <div id="description">
-          <div id="aladin-lite-div" v:bind="aladin">{{ aladin }}</div>
-          <h2>{{ starChoosen.name }}</h2>
-          <h2>{{ starChoosen.MAG }}mg</h2>
-        </div>
-        <div>
+          <div>
+            <b-img
+              class="star_image"
+              src="https://cdn.spacetelescope.org/archives/images/screen/opo9604b.jpg"
+              alt="Star image"
+            ></b-img>
+          </div>
+          <ul class="nobullet">
+            <li>
+              <h2>{{ starChoosen.Name }}</h2>
+              <strong>Astronomical name :</strong>
+              {{ starChoosen.Astronomical_name }}
+            </li>
+            <li>
+              <strong>Magnitude :</strong>
+              {{ starChoosen.Magnitude }}
+            </li>
+            <li>
+              <strong>Meaning :</strong>
+              {{ starChoosen.Meaning }}
+            </li>
+            <li>
+              <br />
+              {{ infos }}
+            </li>
+          </ul>
           <div id="carteCiel">
             <div id="chart">
               <scatter-chart :x="this.x" :y="this.y"></scatter-chart>
@@ -45,7 +70,8 @@
 
 <script lang="js">
 import ScatterChart from "@/components/scatterChart";
-import JsonStars from "../assets/VisibleStars.json";
+import JsonStars from "../assets/100Stars.json";
+import axios from "axios";
 
 export default {
   name: "VisibleStars",
@@ -57,36 +83,35 @@ export default {
       stars: JsonStars,
       starChoosen: [],
       aladin: "",
+      infos: ""
     };
-  },
-  mounted() {
-    let aladin = document.createElement('script');
-    aladin.setAttribute('src', 'https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js');
-    document.head.appendChild(aladin);
   },
   methods: {
     findStar(star) {
-      this.infos == true;
-
       this.starChoosen = star;
+      console.log(this.starChoosen)
 
-      let ra = star.RA;
-      let dec = star.DEC;
-      console.log(ra + dec);
-      this.aladinPosition(star.name);
-      //this.findLocation(ra, dec);
-      this.starMap(ra, dec);
+      // let ra = star.RA;
+      // let dec = star.DEC;
+      // this.findLocation(ra, dec);
+      // this.starMap(ra, dec);
+      this.wikiInfos();
     },
-    aladinPosition(name) {
-      const A = `https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js`;
-      var aldn = A.aladin('#aladin-lite-div', {fov:0.1, target: name});
-      this.aladin = aldn;
+    findLocation(ra, dec) {
+      this.ciel = `http://server1.sky-map.org/skywindow?ra=${ra}&de=${dec}&zoom=9&show_grid=0`;
     },
-    //findLocation(ra, dec) {
-
-    //},
+    async wikiInfos(){
+      var name = this.starChoosen.Name.split(" ");
+      const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&requestid=${name[0]}&prop=extracts&titles=${name[0]}&formatversion=2&exsentences=10&exlimit=1&explaintext=1`
+        try {
+          console.log(this.starChoosen)
+        const donnees = await axios.get(url);
+        this.infos = donnees.data.query.pages[0].extract;
+      } catch (e) {
+          console.error(e);
+      }
+    },
     starMap(ra, dec) {
-      console.log(ra + dec);
       let degres = 0;
       let heure = 0;
       if (ra.substring(0, 1) == 0) {
@@ -119,7 +144,6 @@ export default {
         let y = degres + "." + mindec + secdec;
         this.y = y;
       }
-      console.log(this.x + this.y);
     },
   },
 };
@@ -137,10 +161,24 @@ export default {
   line-height: 2;
 }
 
+.star_image {
+  width: auto;
+  height: 50vh;
+}
+
 h2 {
   font-size: 2em;
   font-weight: bold;
   margin: 5%;
+  letter-spacing: 4px;
+  text-decoration: underline;
+}
+
+.nobullet {
+  list-style-type: none;
+  margin: 5% 10% 5% 10%;
+  line-height: 2;
+  font-size: 0.5em;
 }
 
 #description {
