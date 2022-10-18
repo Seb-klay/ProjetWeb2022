@@ -87,6 +87,7 @@ export default {
     };
   },
   methods: {
+    //Branch main
     findStar(star) {
       this.starChoosen = star;
       console.log(this.starChoosen)
