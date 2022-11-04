@@ -15,8 +15,8 @@
           <tbody v-for="(star, index) in stars" :key="index">
             <tr>
               <th scope="row">{{ index + 1 }}</th>
-              <td>{{ star.Name }}</td>
-              <td>{{ star.Magnitude }}</td>
+              <td>{{ star.name }}</td>
+              <td>{{ star.mag }}</td>
               <td>
                 <b-button v-on:click="findStar(star)" variant="outline-warning"
                   >Infos</b-button
@@ -40,13 +40,13 @@
           </div>
           <ul class="nobullet">
             <li>
-              <h2>{{ starChoosen.Name }}</h2>
+              <h2>{{ starChoosen.name }}</h2>
               <strong>Astronomical name :</strong>
               {{ starChoosen.Astronomical_name }}
             </li>
             <li>
               <strong>Magnitude :</strong>
-              {{ starChoosen.Magnitude }}
+              {{ starChoosen.mag }}
             </li>
             <li>
               <strong>Meaning :</strong>
@@ -70,7 +70,7 @@
 
 <script lang="js">
 import ScatterChart from "@/components/scatterChart";
-import JsonStars from "../assets/100Stars.json";
+import JsonStars from "../assets/stars.json";
 import axios from "axios";
 
 export default {
